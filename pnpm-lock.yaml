@@ -33,7 +33,7 @@ importers:
         specifier: ^1.0.8
         version: 1.0.8(next@15.2.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@prisma/client':
-        specifier: ^6.5.0
+        specifier: 6.10.1
         version: 6.10.1(prisma@6.10.1(typescript@5.8.3))(typescript@5.8.3)
       '@radix-ui/react-accordion':
         specifier: ^1.2.3
@@ -197,9 +197,6 @@ importers:
       pinyin-pro:
         specifier: ^3.26.0
         version: 3.26.0
-      prisma:
-        specifier: ^6.5.0
-        version: 6.10.1(typescript@5.8.3)
       react:
         specifier: ^19.0.0
         version: 19.1.0
@@ -312,6 +309,9 @@ importers:
       prettier-plugin-sort-json:
         specifier: ^4.1.1
         version: 4.1.1(prettier@3.5.3)
+      prisma:
+        specifier: 6.10.1
+        version: 6.10.1(typescript@5.8.3)
       tailwind-merge:
         specifier: ^2.3.0
         version: 2.6.0
