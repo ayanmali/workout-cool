@@ -37,7 +37,7 @@ export class StripeProvider implements PaymentProvider {
 
       const session = await this.stripe.checkout.sessions.create({
         mode: "subscription",
-        payment_method_types: ["card"],
+        // payment_method_types: ["card", "paypal", "apple_pay", "google_pay", "revolut_pay", "samsung_pay", "link", "klarna"],
         customer: customer.id,
         line_items: [
           {
