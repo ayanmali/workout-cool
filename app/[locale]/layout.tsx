@@ -14,6 +14,7 @@ import { Version } from "@/components/version";
 import { TailwindIndicator } from "@/components/utils/TailwindIndicator";
 import { NextTopLoader } from "@/components/ui/next-top-loader";
 import { ServiceWorkerRegistration } from "@/components/pwa/ServiceWorkerRegistration";
+import { VerticalLeftBanner, VerticalRightBanner } from "@/components/ads";
 
 import type { ReactElement } from "react";
 import type { Metadata } from "next";
@@ -245,6 +246,12 @@ export default async function RootLayout({ params, children }: RootLayoutProps) 
           <meta content="width=device-width, initial-scale=1, maximum-scale=1 viewport-fit=cover" name="viewport" />
           <meta content="ca-pub-3437447245301146" name="google-adsense-account" />
 
+          <script
+            async
+            crossOrigin="anonymous"
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3437447245301146"
+          />
+
           {/* PWA Meta Tags */}
           <meta content="yes" name="apple-mobile-web-app-capable" />
           <meta content="default" name="apple-mobile-web-app-status-bar-style" />
@@ -279,7 +286,7 @@ export default async function RootLayout({ params, children }: RootLayoutProps) 
 
         <body
           className={cn(
-            "flex items-center justify-center min-h-screen w-full p-8 max-sm:p-0 max-sm:min-h-full bg-base-200 dark:bg-[#18181b] dark:text-gray-200 antialiased",
+            "flex items-center justify-center min-h-screen w-full max-sm:p-0 max-sm:min-h-full bg-base-200 dark:bg-[#18181b] dark:text-gray-200 antialiased",
             "bg-hero-light dark:bg-hero-dark",
             GeistMono.variable,
             GeistSans.variable,
@@ -294,7 +301,13 @@ export default async function RootLayout({ params, children }: RootLayoutProps) 
             <ThemeSynchronizer />
             <NextTopLoader color="#FF5722" delay={100} showSpinner={false} />
 
-            {children}
+            <div className="flex flex-col w-full">
+              <div className="flex justify-center items-start gap-4 w-full">
+                <VerticalLeftBanner />
+                {children}
+                <VerticalRightBanner />
+              </div>
+            </div>
             <Version />
 
             <TailwindIndicator />
